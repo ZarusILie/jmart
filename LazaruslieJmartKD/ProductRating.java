@@ -9,8 +9,8 @@ package LazaruslieJmartKD;
  */
 public class ProductRating
 {
-    public long total;
-    public long count;
+    private long total;
+    private long count;
     
     public ProductRating(){
         this.total = 0;
@@ -23,7 +23,7 @@ public class ProductRating
     }
     
     public double getAverage(){
-        double average = total * count;
+        double average = total / count;
         return average;
     }
      
