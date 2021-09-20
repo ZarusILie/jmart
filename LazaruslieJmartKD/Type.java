@@ -7,6 +7,6 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-    public enum Type{
+    enum Type{
         DISCOUNT, REBATE;
     }

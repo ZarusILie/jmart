@@ -4,32 +4,22 @@ package LazaruslieJmartKD;
 /**
  * Write a description of class ShipmentDuration here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Lazaruslie Karsono)
+ * 
  */
 public class ShipmentDuration
 {
+    public static final ShipmentDuration INSTANT = new ShipmentDuration(1<<0);
+    public static final ShipmentDuration SAME_DAY = new ShipmentDuration(1<<1);
+    public static final ShipmentDuration NEXT_DAY = new ShipmentDuration(1<<2);
+    public static final ShipmentDuration REGULER = new ShipmentDuration(1<<3);
+    public static final ShipmentDuration KARGO = new ShipmentDuration(1<<4);
+    private int bit;
     
-    private int x;
-
-    /**
-     * Constructor for objects of class ShipmentDuration
-     */
-    public ShipmentDuration()
+   
+    public ShipmentDuration(int bit)
     {
-        // initialise instance variables
-        x = 0;
+        this.bit = bit;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+   
 }
