@@ -7,12 +7,10 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  */
 public class Jmart 
-{
-    
-    
-    public static void Jmart(String[] args) 
+{    
+    public static void main(String[] args) 
     {
-       return;
+     return;  
     }
 
 }
