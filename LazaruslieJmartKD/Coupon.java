@@ -9,6 +9,9 @@ package LazaruslieJmartKD;
  */
 public class Coupon
 {
+    public enum Type{
+        DISCOUNT, REBATE
+    }
     public final String name;
     public final int code;
     public final double cut;

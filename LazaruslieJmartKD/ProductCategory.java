@@ -7,16 +7,9 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  *
  */
-public class ProductCategory
-{
-    enum Category{
+public enum ProductCategory{
         BOOK, KITCHEN, ELECTRONIC, FASHION, GAMING, GADGET, MOTHERCARE,
         COSMETICS, HEALTHCARE, FURNITURE, JEWELRY, TOYS, FNB, STATIONERY,
         SPORTS, AUTOMOTIVE, PETCARE, ART_CRAFT, CARPENTRY, MISCELLANEOUS,
-        PROPERTY, TRAVEL, WEDDING;
-    }
-    
-    public ProductCategory(){
-        
-    }
+        PROPERTY, TRAVEL, WEDDING
 }

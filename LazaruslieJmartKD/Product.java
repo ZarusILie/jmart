@@ -18,15 +18,15 @@ public class Product
     public ProductCategory category;
     public ProductRating rating;
     
-    public Product(String name,int weight, boolean conditionUsed, 
-    PriceTag pricetag,ProductCategory category)
+    public Product(String name,int weight, boolean conditionUsed, PriceTag pricetag,ProductCategory category)
     {
-        this.id = idCounter++;
         this.name = name;
         this.weight = weight;
         this.conditionUsed = conditionUsed;
         this.priceTag = pricetag;
         this.category = category;
-        this.rating = rating;
+        this.rating = new ProductRating();
+        this.id = idCounter;
+        idCounter++;
     }
 }
