@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Coupon
+public class Coupon extends Recognizable
 {
     public enum Type{
         DISCOUNT, REBATE
@@ -21,8 +21,9 @@ public class Coupon
     
     
     
-    public Coupon(String name, int code, Type type, double cut, double minimum)
+    public Coupon(int id, Store store, String name, int code, Type type, double cut, double minimum)
     {
+        super(id);
         this.name = name;
         this.code = code;
         this.cut = cut;
