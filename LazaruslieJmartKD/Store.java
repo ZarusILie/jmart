@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Store extends Recognizable
+public class Store extends Recognizable implements FileParser
 {
     public String name;
     public String address;

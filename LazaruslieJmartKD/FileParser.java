@@ -10,7 +10,9 @@ package LazaruslieJmartKD;
 public interface FileParser
 {
     public boolean read(String content);
-    public Object write();
+    default Object write(){
+        return null;
+    }
     public static Object newInstance(String content){
         return null;
     }

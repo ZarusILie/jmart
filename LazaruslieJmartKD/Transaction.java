@@ -12,9 +12,9 @@ public abstract class Transaction extends Recognizable
     public String time = "Time";
     public int buyerId;
     public int storeId;
-    public Rating rating;
+    public Rating rating = Rating.NONE;
     
-    public enum Rating{
+    enum Rating{
         NONE, BAD, NEUTRAL, GOOD
     }
     

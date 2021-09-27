@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Coupon extends Recognizable
+public class Coupon extends Recognizable implements FileParser
 {
     public enum Type{
         DISCOUNT, REBATE
@@ -21,7 +21,7 @@ public class Coupon extends Recognizable
     
     
     
-    public Coupon(int id, Store store, String name, int code, Type type, double cut, double minimum)
+    public Coupon(int id, String name, int code, Type type, double cut, double minimum)
     {
         super(id);
         this.name = name;
@@ -56,5 +56,10 @@ public class Coupon extends Recognizable
             applyPrice = (pricetag.getAdjustedPrice() - cut)/100;
         }
         return applyPrice;
+    }
+    
+    @Override
+    public boolean read(String content){
+        return false;
     }
 }
