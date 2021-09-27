@@ -28,7 +28,7 @@ public class Store extends Recognizable implements FileParser
          this.phoneNumber = phoneNumber;
      }
      
-     
+     @Override
      public boolean read(String content){
          return false;
         }

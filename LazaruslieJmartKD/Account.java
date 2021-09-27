@@ -27,6 +27,7 @@ public class Account extends Recognizable implements FileParser
         return false;
     }
     
+    @Override
     public Object write(){
         return null;
     }
