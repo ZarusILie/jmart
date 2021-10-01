@@ -31,4 +31,9 @@ public class Account extends Recognizable implements FileParser
     public Object write(){
         return null;
     }
+    
+    @Override
+    public String toString(){
+        return("name:" + name + "\nemail:" + email + "\npassword" + password);
+    }
 }

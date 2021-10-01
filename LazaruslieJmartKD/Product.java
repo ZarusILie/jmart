@@ -9,8 +9,6 @@ package LazaruslieJmartKD;
  */
 public class Product extends Recognizable
 {
-    private int idCounter = 0;
-    public int id;
     public int storeId;
     public String name;
     public int weight;
@@ -18,17 +16,28 @@ public class Product extends Recognizable
     public PriceTag priceTag;
     public ProductCategory category;
     public ProductRating rating;
+    public Shipment.MultiDuration multiDuration;
     
-    public Product (int id, int storeId, String name,int weight, boolean conditionUsed, PriceTag pricetag,ProductCategory category)
+    public Product (int id, int storeId, String name,int weight, boolean conditionUsed, PriceTag pricetag,ProductCategory category, Shipment.MultiDuration multiDuration)
     {
         super(id);
+        this.storeId = storeId;
         this.name = name;
         this.weight = weight;
         this.conditionUsed = conditionUsed;
         this.priceTag = pricetag;
         this.category = category;
         this.rating = new ProductRating();
-        this.id = idCounter;
-        idCounter++;
+        this.multiDuration = multiDuration;
+    }
+    
+    public boolean read(String content){
+        return false;
+    }
+    
+    @Override
+    public String toString(){
+        return ("Name: " + name + "\nWeight:" + weight + "\nconditionUsed:" + conditionUsed +
+        "\npriceTag" + priceTag + "\ncategory" + category + "\nrating:" + rating + "\nstoreId: 1"); 
     }
 }
