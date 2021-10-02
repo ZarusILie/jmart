@@ -3,6 +3,4 @@ comment0.target=Jmart
 comment0.text=\r\n\ Jmart\r\n\r\n\ @author\ (Lazaruslie\ Karsono)\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=
-comment2.target=Jmart()
-numComments=3
+numComments=2

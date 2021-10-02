@@ -30,13 +30,13 @@ public class Jmart
      
     }
     
-    public Jmart(){
+    //public Jmart(){
         
-    }
+    //}
     
     //public static Product createProduct(){
     //    Product productSnack = new Product(1,1,"Chiki", 500, false, new PriceTag(30000), ProductCategory.FNB);
-    //   return productSnack;
+    //  return productSnack;
     //}
     
     //public static Coupon createCoupon(){

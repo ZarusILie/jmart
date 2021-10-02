@@ -1,5 +1,6 @@
 package LazaruslieJmartKD;
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * class Complaint.
@@ -9,7 +10,7 @@ package LazaruslieJmartKD;
  */
 public class Complaint extends Recognizable implements FileParser
 {
-    public String date;
+    public Date date;
     public String desc;
 
     
@@ -17,7 +18,8 @@ public class Complaint extends Recognizable implements FileParser
     {
         super(id);
         this.desc = desc;
-        this.date = "tanggal";
+        this.date = new Date();
+        System.out.println(date);
     }
     
     @Override

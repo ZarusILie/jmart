@@ -1,5 +1,6 @@
 package LazaruslieJmartKD;
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * class Shipment
@@ -13,17 +14,37 @@ public class Shipment implements FileParser
     public int shipmentCost;
     public Duration duration;
     public String receipt;
+    public Date date;
     
-    class Duration{
-        public final Duration INSTANT = new Duration((byte)(1<<0));
-        public final Duration SAME_DAY = new Duration((byte)(1<<1));
-        public final Duration NEXT_DAY = new Duration((byte)(1<<2));
-        public final Duration REGULER = new Duration((byte)(1<<3));
-        public final Duration KARGO = new Duration((byte)(1<<4));
-        private byte bit;
+    static class Duration{
+        public static final SimpleDateFormat ESTIMATION_FORMAT = new SimpleDateFormat("EEE MMMM dd yyyy");
+        public static final Duration INSTANT = new Duration((byte)(1<<0));
+        public static final Duration SAME_DAY = new Duration((byte)(1<<1));
+        public static final Duration NEXT_DAY = new Duration((byte)(1<<2));
+        public static final Duration REGULER = new Duration((byte)(1<<3));
+        public static final Duration KARGO = new Duration((byte)(1<<4));
+        public final byte bit;
         
         private Duration(byte bit){
             this.bit = bit;
+        }
+        
+        public String getEstimatedArrival(Date reference){
+            if((INSTANT.bit & bit) != 0){
+                return ESTIMATION_FORMAT.format(reference);
+            }
+            else if((SAME_DAY.bit & bit) != 0){
+                return ESTIMATION_FORMAT.format(reference);
+            }
+            else if((NEXT_DAY.bit & bit) != 0){
+                return ESTIMATION_FORMAT.format(reference.getDay()+1);
+            }
+            else if((REGULER.bit & bit) !=0){
+                return ESTIMATION_FORMAT.format(reference.getDay()+2);
+            }
+            else{
+                return ESTIMATION_FORMAT.format(reference.getDay()+5);
+            }
         }
     }
     

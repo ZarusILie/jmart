@@ -1,5 +1,6 @@
 package LazaruslieJmartKD;
-
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * class Invoice
@@ -9,7 +10,7 @@ package LazaruslieJmartKD;
  */
 public abstract class Invoice extends Recognizable implements FileParser
 {
-    public String date;
+    public Date date;
     public int buyerId;
     public int productId;
     public int complaintId;
@@ -30,7 +31,7 @@ public abstract class Invoice extends Recognizable implements FileParser
         super(id);
         this.buyerId = buyerId;
         this.productId = productId;
-        this.date = "tanggal";
+        this.date = new Date();
         this.rating = Rating.NONE;
         this.status = Status.WAITING_CONFIRMATION;
         this.complaintId = -1;
