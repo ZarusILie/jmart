@@ -1,7 +1,7 @@
 package LazaruslieJmartKD;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-
+import java.util.ArrayList;
 /**
  * class Invoice
  *
@@ -16,6 +16,7 @@ public abstract class Invoice extends Recognizable implements FileParser
     public int complaintId;
     public Rating rating;
     public Status status;
+    public ArrayList<Record> history = new ArrayList<>();
     
     enum Rating{
         NONE, BAD, NEUTRAL, GOOD
@@ -24,6 +25,12 @@ public abstract class Invoice extends Recognizable implements FileParser
     enum Status{
         WAITING_CONFIRMATION, CANCELLED, ON_PROGRESS, ON_DELIVERY, COMPLAINT,
         FINISHED, FAILED
+    }
+    
+    class Record{
+        public Date date;
+        public String message;
+        public Status status;
     }
     
     protected Invoice(int id, int buyerId, int intproductId)
