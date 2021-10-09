@@ -18,6 +18,14 @@ public class Recognizable implements Comparable<Recognizable>
     {
        this.id = id;
     }
+
+    @Override
+    public int compareTo(Recognizable others) {
+        if (this.id == others.id){
+            return 1;
+        }
+        return 0;
+    }
     
     public boolean equals(Object re){
         if (re instanceof Recognizable){
@@ -49,11 +57,4 @@ public class Recognizable implements Comparable<Recognizable>
         return 0;
     }
 
-    @Override
-    public int compareTo(Recognizable others) {
-        if (this.id == others.id){
-            return 1;
-        }
-        return 0;
-    }
 }
