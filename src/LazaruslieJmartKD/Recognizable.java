@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Recognizable
+public class Recognizable implements Comparable<Recognizable>
 {
     public final int id;
 
@@ -39,5 +39,21 @@ public class Recognizable
         else{
             return false;
         }
+    }
+
+    public static <T extends Recognizable> int setClosingId(Class<T> clazz, int id) {
+        return 0;
+    }
+
+    public static <T extends Recognizable> int getClosingId(Class<T> clazz) {
+        return 0;
+    }
+
+    @Override
+    public int compareTo(Recognizable others) {
+        if (this.id == others.id){
+            return 1;
+        }
+        return 0;
     }
 }
