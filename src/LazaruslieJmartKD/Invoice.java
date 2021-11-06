@@ -1,6 +1,5 @@
 package LazaruslieJmartKD;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 /**
  * class Invoice
@@ -8,7 +7,7 @@ import java.util.ArrayList;
  * @author (Lazaruslie Karsono)
  * 
  */
-public abstract class Invoice extends Recognizable implements FileParser
+public abstract class Invoice extends Serializable implements FileParser
 {
     public Date date;
     public int buyerId;
@@ -35,7 +34,7 @@ public abstract class Invoice extends Recognizable implements FileParser
     
     protected Invoice(int id, int buyerId, int intproductId)
     {
-        super(id);
+
         this.buyerId = buyerId;
         this.productId = productId;
         this.date = new Date();

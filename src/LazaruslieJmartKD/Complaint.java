@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Complaint extends Recognizable implements FileParser
+public class Complaint extends Serializable implements FileParser
 {
     public Date date;
     public String desc;
@@ -16,7 +16,7 @@ public class Complaint extends Recognizable implements FileParser
     
     public Complaint(int id, String desc)
     {
-        super(id);
+
         this.desc = desc;
         this.date = new Date();
         System.out.println(date);

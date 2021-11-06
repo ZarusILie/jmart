@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Store extends Recognizable implements FileParser
+public class Store extends Serializable implements FileParser
 {
     public String name;
     public String address;
@@ -17,7 +17,6 @@ public class Store extends Recognizable implements FileParser
     public static final String REGEX_NAME = "^[A-Z](?!.*(\\s)\1).{4,20}$";
     
     public Store(int accountId, String name, String address, String phoneNumber){
-        super(accountId);
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -25,7 +24,7 @@ public class Store extends Recognizable implements FileParser
      }
      
      public Store(Account account, String name, String address, String phoneNumber){
-         super(account.id);
+
          this.name = name;
          this.address = address;
          this.phoneNumber = phoneNumber;

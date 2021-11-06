@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Product extends Recognizable
+public class Product extends Serializable
 {
     public int storeId;
     public String name;
@@ -20,7 +20,7 @@ public class Product extends Recognizable
     
     public Product (int id, int storeId, String name,int weight, boolean conditionUsed, PriceTag pricetag,ProductCategory category, Shipment.MultiDuration multiDuration)
     {
-        super(id);
+
         this.storeId = storeId;
         this.name = name;
         this.weight = weight;
