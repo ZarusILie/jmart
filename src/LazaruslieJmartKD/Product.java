@@ -18,9 +18,8 @@ public class Product extends Serializable
     public byte shipmentPlans;
     public int weight;
     
-    public Product (int id, int storeId, String name,int weight, boolean conditionUsed, PriceTag pricetag,ProductCategory category, Shipment.MultiDuration multiDuration)
+    public Product (int accountId, String name, int weight, boolean conditionUsed, double price, double discount, ProductCategory category, byte shipmentPlans)
     {
-
         this.accountId = accountId;
         this.name = name;
         this.weight = weight;
@@ -29,10 +28,6 @@ public class Product extends Serializable
         this.discount = discount;
         this.category = category;
         this.shipmentPlans = shipmentPlans;
-    }
-    
-    public boolean read(String content){
-        return false;
     }
     
     @Override

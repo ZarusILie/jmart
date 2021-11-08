@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Payment extends Invoice implements Transactor
+public class Payment extends Invoice
 {
     public int productCount;
     public Shipment shipment;
@@ -20,12 +20,12 @@ public class Payment extends Invoice implements Transactor
     }
     
     @Override
-    public boolean validate(){
+    public boolean read(String content){
         return false;
     }
     
     @Override
-    public Invoice perform(){
+    public String toString(){
         return null;
     }
     

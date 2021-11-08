@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author (Lazaruslie Karsono)
  * 
  */
-public abstract class Invoice extends Serializable implements FileParser
+public abstract class Invoice extends Serializable
 {
     public Date date;
     public int buyerId;
@@ -43,10 +43,12 @@ public abstract class Invoice extends Serializable implements FileParser
         this.complaintId = -1;
     }
 
-    @Override
+
     public boolean read(String content){
         return false;
     }
     
-    public abstract double getTotalPay();
+    public double getTotalPay(){
+        return 0.0;
+    }
 }

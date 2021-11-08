@@ -7,7 +7,7 @@ package LazaruslieJmartKD;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Coupon extends Serializable implements FileParser
+public class Coupon extends Serializable
 {
     public enum Type{
         DISCOUNT, REBATE
@@ -36,7 +36,7 @@ public class Coupon extends Serializable implements FileParser
         return used;
     }
     
-    public boolean canApply(PriceTag pricetag){
+    public boolean canApply(Treasury pricetag){
         if (pricetag.getAdjustedPrice() >= minimum && used){
             return true;
         }
@@ -46,7 +46,7 @@ public class Coupon extends Serializable implements FileParser
 
     }
     
-    public double apply(PriceTag pricetag){
+    public double apply(Treasury pricetag){
         used = true;
         double applyPrice = 0;
         if (this.type == Type.DISCOUNT){
@@ -57,8 +57,7 @@ public class Coupon extends Serializable implements FileParser
         }
         return applyPrice;
     }
-    
-    @Override
+
     public boolean read(String content){
         return false;
     }

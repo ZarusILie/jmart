@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
  * @author (Lazaruslie Karsono)
  * 
  */
-public class Shipment implements FileParser
+public class Shipment
 {
     public String address;
     public int shipmentCost;
@@ -77,7 +77,7 @@ public class Shipment implements FileParser
         this.receipt = receipt;
     }
 
-    @Override
+
     public boolean read(String content){
         return false;
     }

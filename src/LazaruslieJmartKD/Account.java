@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * @author (Lazaruslie Karsono)
  * @version (a version number or a date)
  */
-public class Account extends Serializable implements FileParser
+public class Account extends Serializable
 {
     public String name;
     public String email;
@@ -35,12 +35,12 @@ public class Account extends Serializable implements FileParser
         return false;
     }
     
-    @Override
+
     public boolean read(String content){
         return false;
     }
     
-    @Override
+
     public String toString(){
         return("name:" + name + "\nemail:" + email + "\npassword" + password);
     }

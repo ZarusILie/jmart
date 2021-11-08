@@ -9,6 +9,7 @@ import java.lang.reflect.Type;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import java.util.stream.Collectors;
 
 /**
  * Jmart
@@ -16,6 +17,12 @@ import com.google.gson.stream.JsonReader;
  * @author (Lazaruslie Karsono)
  */
 class Jmart {
+
+    public static List<Product> filterByAccountId(List<Product> list, int accountId, int page, int pageSize) {
+        Predicate<Product> predicate = predi -> (predi.accountId == accountId);
+        return paginate(list, page, pageSize, predicate);
+    }
+
     public static List<Product> filterByCategory(List<Product> list, ProductCategory category) {
         List<Product> prod = new ArrayList<>();
         for(Product product : list){
@@ -26,6 +33,11 @@ class Jmart {
         return prod;
     }
 
+    public static List<Product> filterByName(List<Product> list, String search, int page, int pageSize) {
+        Predicate<Product> predicate = predi -> (predi.name.toLowerCase().contains(search.toLowerCase()));
+        return paginate(list, page, pageSize, predicate);
+    }
+
     public static List<Product> filterByPrice(List<Product> list, double minPrice, double maxPrice) {
         List<Product> prod = new ArrayList<>();
         for(int i = 0; i < list.size(); i++) {
@@ -33,11 +45,11 @@ class Jmart {
                 if(list.get(i).price <= maxPrice) {
                     prod.add(list.get(i));
                 }
-            }else if(maxPrice <= 0.0) {
+            } else if(maxPrice <= 0.0) {
                 if(list.get(i).price >= minPrice) {
                     prod.add(list.get(i));
                 }
-            }else {
+            } else {
                 if(list.get(i).price >= minPrice && list.get(i).price <= maxPrice){
                     prod.add(list.get(i));
                 }
@@ -58,16 +70,21 @@ class Jmart {
             }
         }
 
+    private static List<Product> paginate(List<Product> list, int page, int pageSize, Predicate<Product> pred) {
+        return list.stream().filter(predi -> pred.predicate(predi)).skip(page * pageSize).limit(pageSize).collect(Collectors.toList());
+    }
+
     public static List<Product> read(String filepath) throws FileNotFoundException {
         List<Product> prod = new ArrayList<>();
         try {
             Gson gson = new Gson();
             JsonReader reader = new JsonReader(new FileReader(filepath));
             reader.beginArray();
-            while(reader.hasNext()){
+            while(reader.hasNext()) {
                 prod.add(gson.fromJson(reader, Product.class));
             }
-        } catch (Exception e){
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return prod;

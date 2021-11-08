@@ -2,12 +2,12 @@ package LazaruslieJmartKD;
 
 
 /**
- * PriceTag
+ * Treasury
  *
  * @author (Lazaruslie Karsono)
  * 
  */
-public class PriceTag
+public class Treasury
 {
     public static double COMMISSION_MULTIPLIER = 0.05;
     public static double BOTTOM_PRICE = 20000.0;
@@ -15,12 +15,12 @@ public class PriceTag
     public double price;
     public double discount;
     
-    public PriceTag(double price){
+    public Treasury(double price){
         this.price = price;
         this.discount = 0.0;
     }
     
-    public PriceTag(double price, double discount){
+    public Treasury(double price, double discount){
         this.price = price;
         this.discount = discount;
     }
@@ -48,10 +48,5 @@ public class PriceTag
         else{
             return ((100.0 - discount)/100.0) * price;
         }
-    }
-
-    public static void PriceTag()
-    {
-        
     }
 }
