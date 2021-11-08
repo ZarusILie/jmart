@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class Store extends Serializable implements FileParser
 {
     public String name;
+    public double balance;
     public String address;
     public String phoneNumber;
     public static final String REGEX_PHONE = "^\\d{9,12}$";
@@ -18,6 +19,7 @@ public class Store extends Serializable implements FileParser
     
     public Store(int accountId, String name, String address, String phoneNumber){
         this.name = name;
+        this.balance = balance;
         this.address = address;
         this.phoneNumber = phoneNumber;
         

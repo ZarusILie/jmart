@@ -9,26 +9,26 @@ package LazaruslieJmartKD;
  */
 public class Product extends Serializable
 {
-    public int storeId;
-    public String name;
-    public int weight;
-    public boolean conditionUsed;
-    public PriceTag priceTag;
+    public int accountId;
     public ProductCategory category;
-    public ProductRating rating;
-    public Shipment.MultiDuration multiDuration;
+    public boolean conditionUsed;
+    public double discount;
+    public String name;
+    public double price;
+    public byte shipmentPlans;
+    public int weight;
     
     public Product (int id, int storeId, String name,int weight, boolean conditionUsed, PriceTag pricetag,ProductCategory category, Shipment.MultiDuration multiDuration)
     {
 
-        this.storeId = storeId;
+        this.accountId = accountId;
         this.name = name;
         this.weight = weight;
         this.conditionUsed = conditionUsed;
-        this.priceTag = pricetag;
+        this.price = price;
+        this.discount = discount;
         this.category = category;
-        this.rating = new ProductRating();
-        this.multiDuration = multiDuration;
+        this.shipmentPlans = shipmentPlans;
     }
     
     public boolean read(String content){
@@ -38,6 +38,6 @@ public class Product extends Serializable
     @Override
     public String toString(){
         return ("Name: " + name + "\nWeight:" + weight + "\nconditionUsed:" + conditionUsed +
-        "\npriceTag" + priceTag + "\ncategory" + category + "\nrating:" + rating + "\nstoreId: 1"); 
+        "\nprice" + price + "\ncategory" + category + "\ndiscount:" + discount + "\naccountId: " + accountId);
     }
 }
