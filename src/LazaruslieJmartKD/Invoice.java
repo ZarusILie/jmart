@@ -32,7 +32,7 @@ public abstract class Invoice extends Serializable
         public Status status;
     }
     
-    protected Invoice(int id, int buyerId, int intproductId)
+    public Invoice(int buyerId, int productId)
     {
 
         this.buyerId = buyerId;
