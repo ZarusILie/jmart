@@ -46,4 +46,8 @@ public class ObjectPoolThread<T> extends Thread {
         }
     }
 
+    public int size() {
+        return objectPool.size();
+    }
+
 }

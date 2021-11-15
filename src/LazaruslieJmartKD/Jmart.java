@@ -18,6 +18,12 @@ import java.util.stream.Collectors;
  */
 class Jmart {
 
+    public static long DELIVERED_LIMIT_MS;
+    public static long ON_DELIVERY_LIMIT_MS;
+    public static long ON_PROGRESS_LIMIT_MS;
+    public static long WAITING_CONF_LIMIT_MS;
+
+    /*
     public static List<Product> filterByAccountId(List<Product> list, int accountId, int page, int pageSize) {
         Predicate<Product> predicate = predi -> (predi.accountId == accountId);
         return paginate(list, page, pageSize, predicate);
@@ -57,19 +63,40 @@ class Jmart {
         }
         return prod;
     }
+    */
 
     public static void main(String[] args) {
 
         try {
-            List<Product> list = read("D:/OOP/jmart/lib/randomProductList.json");
-            List<Product> filtered = filterByPrice(list, 0.0, 20000.0);
-            filtered.forEach(product -> System.out.println(product.price));
+            /*
+            JsonTable<Payment> table = new JsonTable<>(Payment.class, "randomPaymentList.json");
+            ObjectPoolThread<Payment> paymentPool = new ObjectPoolThread<Payment>("Thread-PP", Jmart::paymentTimekeeper);
+            paymentPool.start();
+            table.forEach(payment -> paymentPool.add(payment));
+            while (paymentPool.size() != 0);
+            paymentPool.exit();
+            while (paymentPool.isAlive());
+            System.out.println("Thread exited successfully");
+            Gson gson = new Gson();
+            table.forEach(payment -> {
+                String history = gson.toJson(payment.history);
+                System.out.println(history);
+            //List<Product> list = read("D:/OOP/jmart/lib/randomProductList.json");
+            //List<Product> filtered = filterByPrice(list, 0.0, 20000.0);
+            //filtered.forEach(product -> System.out.println(product.price));
+             */
         }
         catch (Throwable t) {
             t.printStackTrace();
             }
         }
 
+        public static boolean paymentTimekeeper(Payment payment) {
+            return false;
+        }
+
+
+    /*
     private static List<Product> paginate(List<Product> list, int page, int pageSize, Predicate<Product> pred) {
         return list.stream().filter(predi -> pred.predicate(predi)).skip(page * pageSize).limit(pageSize).collect(Collectors.toList());
     }
@@ -89,7 +116,7 @@ class Jmart {
         }
         return prod;
     }
-
+    */
         //Product productSnack = createProduct();
         //Coupon couponDiskon = createCoupon();
         //Shipment shipment = createShipment();
