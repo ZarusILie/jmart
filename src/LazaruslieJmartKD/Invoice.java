@@ -1,6 +1,6 @@
 package LazaruslieJmartKD;
 import java.util.Date;
-import java.util.ArrayList;
+import java.util.Calendar;
 /**
  * class Invoice
  *
@@ -9,13 +9,12 @@ import java.util.ArrayList;
  */
 public abstract class Invoice extends Serializable
 {
-    public Date date;
+    public final Date date;
     public int buyerId;
     public int productId;
     public int complaintId;
     public Rating rating;
     public Status status;
-    public ArrayList<Record> history = new ArrayList<>();
     
     enum Rating{
         NONE, BAD, NEUTRAL, GOOD
@@ -32,12 +31,12 @@ public abstract class Invoice extends Serializable
         public Status status;
     }
     
-    public Invoice(int buyerId, int productId)
-    {
-
+    public Invoice(int buyerId, int productId) {
         this.buyerId = buyerId;
         this.productId = productId;
-        this.date = new Date();
+        this.date = java.util.Calendar.getInstance().getTime();
+        Calendar date = Calendar.getInstance();
+        System.out.println(date.getTime());
         this.rating = Rating.NONE;
         this.status = Status.WAITING_CONFIRMATION;
         this.complaintId = -1;

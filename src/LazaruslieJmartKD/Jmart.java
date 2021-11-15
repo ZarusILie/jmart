@@ -61,9 +61,12 @@ class Jmart {
     public static void main(String[] args) {
 
         try {
-            List<Product> list = read("D:/OOP/jmart/lib/randomProductList.json");
-            List<Product> filtered = filterByPrice(list, 0.0, 20000.0);
-            filtered.forEach(product -> System.out.println(product.price));
+            String filepath = "D:/OOP/jmart/lib/account.json";
+            JsonTable<Account> tableAccount = new JsonTable<>(Account.class, filepath);
+            tableAccount.add(new Account("name", "email", "password"));
+            tableAccount.writeJson();
+            tableAccount = new JsonTable<>(Account.class, filepath);
+            tableAccount.forEach(account -> System.out.println(account.toString()));
         }
         catch (Throwable t) {
             t.printStackTrace();

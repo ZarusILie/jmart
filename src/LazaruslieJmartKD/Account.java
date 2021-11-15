@@ -16,7 +16,7 @@ public class Account extends Serializable
     public static final String REGEX_EMAIL = "^\\w+([\\.&_*~]?\\w+)*@\\w+([\\.\\-]?\\w+)*(\\.\\w{2,3})+$";
     public static final String REGEX_PASSWORD = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
     
-    public Account(int id, String name, String email, String password)
+    public Account(String name, String email, String password)
     {
 
         this.name = name;
