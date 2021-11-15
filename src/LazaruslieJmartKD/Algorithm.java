@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class Algorithm {
 
@@ -405,6 +406,60 @@ public class Algorithm {
             }
         }
         return minimum;
+    }
+
+    public static <T> List<T> paginate(T[] array, int page, int pageSize, Predicate<T> pred) {
+        // Converting array to List
+        List<T> newList = new ArrayList<>();
+        for(T val : array){
+            newList.add(val);
+        }
+        try{
+            List<T> filteredList = newList.stream().filter(pred::predicate).collect(Collectors.toList());
+            int index = (page * pageSize) + pageSize;
+            if(index > filteredList.size()){
+                index = filteredList.size();
+            }
+            return filteredList.subList((page * pageSize), index);
+        }catch (Exception t){
+            return newList.subList(0 ,0);
+        }
+    }
+
+    public static <T> List<T> paginate(Iterable<T> iterable, int page, int pageSize, Predicate<T> pred) {
+        //Converting array to List
+        List<T> newList = new ArrayList<>();
+        for(T val : iterable){
+            newList.add(val);
+        }
+        try{
+            List<T> filteredList = newList.stream().filter(pred::predicate).collect(Collectors.toList());
+            int index = (page * pageSize) + pageSize;
+            if(index > filteredList.size()){
+                index = filteredList.size();
+            }
+            return filteredList.subList((page * pageSize), index);
+        }catch (Exception y){
+            return newList.subList(0 ,0);
+        }
+    }
+
+    public static <T> List<T> paginate(Iterator<T> iterator, int page, int pageSize, Predicate<T> pred) {
+        //Converting array to List
+        List<T> newList = new ArrayList<>();
+        while (iterator.hasNext()) {
+            newList.add(iterator.next());
+        }
+        try {
+            List<T> filteredList = newList.stream().filter(pred::predicate).collect(Collectors.toList());
+            int index = (page * pageSize) + pageSize;
+            if (index > filteredList.size()) {
+                index = filteredList.size();
+            }
+            return filteredList.subList((page * pageSize), index);
+        } catch (Exception t) {
+            return newList.subList(0, 0);
+        }
     }
 
 }

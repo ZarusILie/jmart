@@ -6,7 +6,7 @@ import java.util.Vector;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 
-public class JsonTable <T> extends Vector {
+public class JsonTable<T> extends Vector {
     public final String filepath;
     private static final Gson gson = new Gson();
 

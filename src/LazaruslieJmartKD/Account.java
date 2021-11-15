@@ -18,7 +18,6 @@ public class Account extends Serializable
     
     public Account(String name, String email, String password)
     {
-
         this.name = name;
         this.email = email;
         this.password = password;
