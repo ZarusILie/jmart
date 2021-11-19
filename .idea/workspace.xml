@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4182080c-4d6a-4e0c-ae83-8548d89e7639" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jmart.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jmart.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/city.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gson-2.8.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/randomProductList.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Algorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Complaint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Coupon$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Coupon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Invoice$Rating.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Invoice$Record.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Invoice$Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Jmart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/JsonTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/ObjectPoolThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Payment$Record.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Payment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/PhoneTopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Predicate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/ProductCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/ProductRating.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Serializable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Shipment$Duration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Shipment$MultiDuration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Shipment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jmart/LazaruslieJmartKD/Treasury.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Algorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Complaint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Coupon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Invoice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Jmart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/JsonTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/ObjectPoolThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/PhoneTopUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Predicate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/ProductCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/ProductRating.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Serializable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Shipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LazaruslieJmartKD/Treasury.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/LazaruslieJmartKD">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="217cKt0GtZWexmGGhEUOlhajY3M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Jmart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.LazaruslieJmartKD.Jmart" />
+      <module name="LazaruslieJmartKD.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.LazaruslieJmartKD.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Jmart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4182080c-4d6a-4e0c-ae83-8548d89e7639" name="Changes" comment="" />
+      <created>1637295507338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637295507338</updated>
+      <workItem from="1637295509721" duration="8387000" />
+      <workItem from="1637310403129" duration="970000" />
+      <workItem from="1637311415527" duration="1010000" />
+      <workItem from="1637312486778" duration="1787000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
