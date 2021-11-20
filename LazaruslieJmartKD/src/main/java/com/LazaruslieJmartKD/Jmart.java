@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Type;
+
+import com.LazaruslieJmartKD.dbjson.JsonDBEngine;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
@@ -94,7 +96,9 @@ class Jmart {
     public static void main(String[] args) {
 
         try {
+            JsonDBEngine.Run(Jmart.class);
             SpringApplication.run(Jmart.class, args);
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
             /*
             JsonTable<Payment> table = new JsonTable<>(Payment.class, "randomPaymentList.json");
             ObjectPoolThread<Payment> paymentPool = new ObjectPoolThread<Payment>("Thread-PP", Jmart::paymentTimekeeper);

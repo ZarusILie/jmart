@@ -1,6 +1,8 @@
 package com.LazaruslieJmartKD;
 
 
+import com.LazaruslieJmartKD.dbjson.Serializable;
+
 /**
  *Coupon
  *

@@ -1,4 +1,6 @@
 package com.LazaruslieJmartKD;
+import com.LazaruslieJmartKD.dbjson.Serializable;
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 

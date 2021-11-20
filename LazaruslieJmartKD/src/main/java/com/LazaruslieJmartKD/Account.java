@@ -1,4 +1,6 @@
 package com.LazaruslieJmartKD;
+import com.LazaruslieJmartKD.dbjson.Serializable;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

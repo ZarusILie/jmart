@@ -1,6 +1,5 @@
-package com.LazaruslieJmartKD;
+package com.LazaruslieJmartKD.dbjson;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Serializable
@@ -18,16 +17,10 @@ public class Serializable implements Comparable<Serializable>
      * Constructor for objects of class Serializable
      */
     protected Serializable() {
-        Class<?> getC = getClass();
-        if(mapCounter.get(getC) == null){
-            mapCounter.put(getC,0);
-        }
-
-        else{
-            mapCounter.put(getC, mapCounter.get(getC) + 1);
-        }
-
-        this.id =mapCounter.get(getC);
+        Integer counter = mapCounter.get(getClass());
+        counter = counter == null ? 0 : counter + 1;
+        mapCounter.put(getClass(), counter);
+        this.id = counter;
     }
 
     @Override
@@ -59,12 +52,11 @@ public class Serializable implements Comparable<Serializable>
     }
 
     public static <T extends Serializable> int getClosingId (Class<T> clazz){
-        return mapCounter.get(clazz.getClass());
+        return mapCounter.get(clazz);
     }
 
-    public static <T extends Serializable> int setClosingID (Class<T> clazz, int id){
-        mapCounter.replace(clazz.getClass(), id);
-        return mapCounter.get(clazz.getClass());
+    public static <T extends Serializable> int setClosingId (Class<T> clazz, int id){
+        return mapCounter.put(clazz, id);
     }
 
 }
