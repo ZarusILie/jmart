@@ -5,7 +5,11 @@ import com.LazaruslieJmartKD.Store;
 import com.LazaruslieJmartKD.dbjson.JsonAutowired;
 import com.LazaruslieJmartKD.dbjson.JsonTable;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigInteger;
 import java.util.regex.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 @RestController
 @RequestMapping("/account")
@@ -16,8 +20,7 @@ public class AccountController implements BasicGetController<Account> {
     public static final String REGEX_PASSWORD = "^(?=.[a-z])(?=.[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
     public static final Pattern REGEX_PATTERN_EMAIL = Pattern.compile(REGEX_EMAIL);
     public static final Pattern REGEX_PATTERN_PASSWORD = Pattern.compile(REGEX_PASSWORD);
-    public static @JsonAutowired(value = Account.class, filepath = "src/main")
-    JsonTable<Account> accountTable;
+    public static @JsonAutowired(value = Account.class, filepath = "src/main") JsonTable<Account> accountTable;
 
     public JsonTable<Account> getJsonTable() {
         return accountTable;
@@ -35,14 +38,20 @@ public class AccountController implements BasicGetController<Account> {
                     @RequestParam String email,
                     @RequestParam String password
             ) {
-        for (Account account : accountTable) {
-            boolean matchEmail = account.email.equals(email);
-            boolean matchPassword = account.password.equals(password);
-            if (matchEmail && matchPassword) {
-                return account;
-            }
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch(NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
-        return null;
+        byte[] digest = md.digest(password.getBytes());
+        BigInteger num = new BigInteger(1, digest);
+        String hashing = num.toString(16);
+        while(hashing.length()<32) hashing = "0" + hashing;
+        String resultHashing = hashing;
+
+        return Algorithm.<Account> find(accountTable, object -> object.email.equals(email) &&
+                object.password.equals(resultHashing));
     }
 
     @PostMapping("/register")
@@ -52,15 +61,31 @@ public class AccountController implements BasicGetController<Account> {
                     @RequestParam String email,
                     @RequestParam String password
             ) {
-        if((REGEX_PATTERN_EMAIL.matcher(email).find()) && (REGEX_PATTERN_PASSWORD.matcher(password).find()) && !name.isBlank()) {
-            for(Account account : accountTable){
-                if(account.email.equals(email)){
-                    return null;
-                }
-            }
-            return new Account(name, email, password, 0.0);
+        if(name.isBlank())
+            return null;
+        Matcher emailMatch = REGEX_PATTERN_EMAIL.matcher(email);
+        if(!emailMatch.find())
+            return null;
+        Matcher passwordMatch = REGEX_PATTERN_PASSWORD.matcher(password);
+        if(!passwordMatch.find())
+            return null;
+        if(Algorithm.<Account> find(accountTable, object -> object.email.equals(email)) != null)
+            return null;
+
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch(NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
-        return null;
+        byte[] digest = md.digest(password.getBytes());
+        BigInteger num = new BigInteger(1, digest);
+        String hashing = num.toString(16);
+        while(hashing.length()<32) hashing = "0" + hashing;
+
+        Account acc = new Account(name, email, hashing, 0);
+        accountTable.add(acc);
+        return acc;
     }
 
 

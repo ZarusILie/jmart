@@ -1,14 +1,12 @@
 package com.LazaruslieJmartKD.controller;
-
-import com.LazaruslieJmartKD.Account;
 import com.LazaruslieJmartKD.ObjectPoolThread;
 import com.LazaruslieJmartKD.Payment;
 import com.LazaruslieJmartKD.dbjson.JsonAutowired;
 import com.LazaruslieJmartKD.dbjson.JsonTable;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/payment")
 public class PaymentController implements BasicGetController<Payment> {
 
     public static final long DELIVERED_LIMIT_MS = 5;

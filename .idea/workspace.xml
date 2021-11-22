@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4182080c-4d6a-4e0c-ae83-8548d89e7639" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/LazaruslieJmartKD/src/main/java/com/LazaruslieJmartKD/controller/PaymentController.java" afterDir="false" />
     </list>
@@ -100,6 +98,7 @@
       <workItem from="1637375104365" duration="7033000" />
       <workItem from="1637571756765" duration="42000" />
       <workItem from="1637575120269" duration="5400000" />
+      <workItem from="1637583996017" duration="5180000" />
     </task>
     <servers />
   </component>
