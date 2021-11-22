@@ -30,10 +30,10 @@ public class ProductController implements BasicGetController<Product> {
                     )
     {
         for(Account account : AccountController.accountTable) {
-            if(account.id == accountId && account.store != null){
-                Product newProduct = new Product(accountId, name, weight, conditionUsed, price, discount, category, shipmentPlans);
-                productTable.add(newProduct);
-                return newProduct;
+            if(account.id == accountId && account.store != null) {
+                Product prod = new Product(accountId, name, weight, conditionUsed, price, discount, category, shipmentPlans);
+                productTable.add(prod);
+                return prod;
             }
         }
         return null;
@@ -47,7 +47,7 @@ public class ProductController implements BasicGetController<Product> {
                     @RequestParam int pageSize
             )
     {
-        return Algorithm.<Product>paginate(getJsonTable(),page,pageSize, p -> (p.accountId == id));
+        return Algorithm.<Product> paginate(getJsonTable(), page, pageSize, x -> (x.accountId == id));
     }
 
     @PostMapping("/{id}/getFiltered")
