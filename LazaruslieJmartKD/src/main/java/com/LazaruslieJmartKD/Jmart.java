@@ -95,7 +95,6 @@ class Jmart {
 
     public static void main(String[] args) {
 
-        try {
             JsonDBEngine.Run(Jmart.class);
             SpringApplication.run(Jmart.class, args);
             Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
@@ -118,15 +117,8 @@ class Jmart {
              */
         }
 
-        catch (Exception e){
-            System.out.println(e);
-        }
 
-        catch (Throwable t){
-            t.printStackTrace();
-        }
 
-    }
 
     /*
     public static boolean paymentTimekeeper(Payment payment) {
