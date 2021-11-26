@@ -55,11 +55,15 @@ public class ProductController implements BasicGetController<Product> {
             (
                   @RequestParam(defaultValue = "0") int page,
                   @RequestParam(defaultValue = "10") int pageSize,
+                  @RequestParam int accountId,
+                  @RequestParam String search,
                   @RequestParam int minPrice,
                   @RequestParam int maxPrice,
                   @RequestParam ProductCategory category
             )
     {
-        return null;
+
+        Predicate<Product> pred = predi -> (predi.accountId == accountId && predi.name.equals(search) && predi.category == category && predi.price >= minPrice && predi.price <= maxPrice);
+        return Algorithm.<Product>paginate(getJsonTable(),page,pageSize, pred);
     }
 }
