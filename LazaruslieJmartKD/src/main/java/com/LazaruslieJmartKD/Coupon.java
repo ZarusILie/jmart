@@ -23,7 +23,7 @@ public class Coupon extends Serializable
     
     
     
-    public Coupon(int id, String name, int code, Type type, double cut, double minimum)
+    public Coupon(String name, int code, Type type, double cut, double minimum)
     {
 
         this.name = name;
@@ -34,12 +34,12 @@ public class Coupon extends Serializable
         this.used = false;
     }
     
-    public boolean isUsed(){
+    public boolean isUsed() {
         return used;
     }
     
-    public boolean canApply(Treasury pricetag){
-        if (pricetag.getAdjustedPrice() >= minimum && used){
+    public boolean canApply(double price, double discount) {
+        if (Treasury.getAdjustedPrice(price, discount) >= minimum && !used){
             return true;
         }
         else {
@@ -48,19 +48,20 @@ public class Coupon extends Serializable
 
     }
     
-    public double apply(Treasury pricetag){
+    public double apply(double price, double discount) {
         used = true;
-        double applyPrice = 0;
-        if (this.type == Type.DISCOUNT){
-            applyPrice = (pricetag.getAdjustedPrice() * cut)/100;
+        if(type == Type.DISCOUNT){
+            if(cut >= 100) {
+                return (Treasury.getAdjustedPrice(price, discount) - Treasury.getAdjustedPrice(price, discount) * (100 / 100));
+            }
+            else if(cut <= 0) {
+                return (Treasury.getAdjustedPrice(price, discount) - Treasury.getAdjustedPrice(price, discount) * (0 / 100));
+            }
+            else {
+                return (Treasury.getAdjustedPrice(price, discount) - Treasury.getAdjustedPrice(price, discount) * (cut / 100));
+            }
         }
-        else if(this.type == Type.REBATE){
-            applyPrice = (pricetag.getAdjustedPrice() - cut)/100;
-        }
-        return applyPrice;
+        return (Treasury.getAdjustedPrice(price, cut) - cut);
     }
 
-    public boolean read(String content){
-        return false;
-    }
 }

@@ -1,6 +1,6 @@
 package com.LazaruslieJmartKD;
 import com.LazaruslieJmartKD.dbjson.Serializable;
-
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 /**
@@ -17,17 +17,18 @@ public abstract class Invoice extends Serializable
     public int complaintId;
     public Rating rating;
     public Status status;
+    public ArrayList<Record> history;
     
-    enum Rating{
+    public enum Rating{
         NONE, BAD, NEUTRAL, GOOD
     }
     
-    enum Status{
+    public enum Status{
         WAITING_CONFIRMATION, CANCELLED, ON_PROGRESS, ON_DELIVERY, COMPLAINT,
         FINISHED, FAILED, DELIVERED
     }
     
-    class Record{
+    public class Record{
         public Date date;
         public String message;
         public Status status;

@@ -19,6 +19,7 @@ public class Product extends Serializable
     public double price;
     public byte shipmentPlans;
     public int weight;
+
     
     public Product (int accountId, String name, int weight, boolean conditionUsed, double price, double discount, ProductCategory category, byte shipmentPlans)
     {
