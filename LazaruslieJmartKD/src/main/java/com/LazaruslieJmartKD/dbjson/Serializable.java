@@ -18,14 +18,19 @@ public class Serializable implements Comparable<Serializable>
      */
     protected Serializable() {
         Integer counter = mapCounter.get(getClass());
-        counter = counter == null ? 0 : counter + 1;
+        if(counter == null){
+            counter = 0;
+        }
+        else {
+            counter = counter + 1;
+        }
         mapCounter.put(getClass(), counter);
         this.id = counter;
     }
 
     @Override
-    public int compareTo(Serializable other){
-        return Integer.compare(this.id, other.id);
+    public int compareTo(Serializable other) {
+        return (this.id < other.id) ? -1 : ((this.id == other.id) ? 0 : 1);
     }
     
     public boolean equals(Object other){
@@ -51,11 +56,11 @@ public class Serializable implements Comparable<Serializable>
         }
     }
 
-    public static <T extends Serializable> int getClosingId (Class<T> clazz){
+    public static <T extends Serializable> Integer getClosingId (Class<T> clazz){
         return mapCounter.get(clazz);
     }
 
-    public static <T extends Serializable> int setClosingId (Class<T> clazz, int id){
+    public static <T extends Serializable> Integer setClosingId (Class<T> clazz, int id){
         return mapCounter.put(clazz, id);
     }
 
