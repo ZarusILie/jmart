@@ -2,7 +2,7 @@ package com.LazaruslieJmartKD;
 
 
 /**
- * ProductCategory
+ * enum ProductCategory
  *
  * @author (Lazaruslie Karsono)
  *

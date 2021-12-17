@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
  * class Account
  *
  * @author (Lazaruslie Karsono)
- * @version (a version number or a date)
  */
 public class Account extends Serializable
 {
@@ -16,8 +15,8 @@ public class Account extends Serializable
     public String email;
     public String password;
     public double balance;
-    public static final String REGEX_EMAIL = "^\\w+([\\.&_*~]?\\w+)*@\\w+([\\.\\-]?\\w+)*(\\.\\w{2,3})+$";
-    public static final String REGEX_PASSWORD = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+    public static final String REGEX_EMAIL = "^[a-zA-Z0-9&~]+(?:\\.[a-zA-Z0-9&_~]+)@[A-Za-z0-9]{1}[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9-]+)$";
+    public static final String REGEX_PASSWORD = "^(?=.[a-z])(?=.[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
     public Store store;
 
     public Account(String name, String email, String password, double balance)

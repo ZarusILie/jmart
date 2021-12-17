@@ -1,5 +1,11 @@
 package com.LazaruslieJmartKD;
 
+/**
+ * class PhoneTopUp
+ *
+ * @author (Lazaruslie Karsono)
+ */
+
 public class PhoneTopUp extends Invoice {
     public String phoneNumber;
     public Status status;
@@ -8,8 +14,8 @@ public class PhoneTopUp extends Invoice {
         super (buyerId, productId);
         this.phoneNumber = phoneNumber;
     }
-
+    @Override
     public double getTotalPay(Product product) {
-        return 0.0;
+        return Treasury.getAdjustedPrice(product.price, product.discount);
     }
 }

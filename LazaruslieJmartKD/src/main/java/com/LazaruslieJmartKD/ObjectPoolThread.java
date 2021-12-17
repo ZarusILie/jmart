@@ -3,6 +3,12 @@ import java.awt.*;
 import java.util.Vector;
 import java.util.function.Function;
 
+/**
+ * class ObjectPoolThread
+ *
+ * @author (Lazaruslie Karsono)
+ */
+
 public class ObjectPoolThread<T> extends Thread {
     private boolean exitSignal;
     private Vector<T>  objectPool = new Vector<>();

@@ -4,10 +4,9 @@ package com.LazaruslieJmartKD;
 import com.LazaruslieJmartKD.dbjson.Serializable;
 
 /**
- *Coupon
+ * class Coupon
  *
  * @author (Lazaruslie Karsono)
- * 
  */
 public class Coupon extends Serializable
 {

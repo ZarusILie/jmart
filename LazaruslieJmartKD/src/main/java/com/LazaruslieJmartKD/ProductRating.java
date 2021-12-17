@@ -2,10 +2,9 @@ package com.LazaruslieJmartKD;
 
 
 /**
- * ProductRating
+ * class ProductRating
  *
  * @author (Lazaruslie Karsono)
- * 
  */
 public class ProductRating
 {

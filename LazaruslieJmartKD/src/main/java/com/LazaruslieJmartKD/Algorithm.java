@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
+/**
+ * class Algorithm
+ *
+ * @author (Lazaruslie Karsono)
+ */
+
 public class Algorithm {
 
     private Algorithm(){

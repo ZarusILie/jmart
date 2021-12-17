@@ -1,14 +1,15 @@
 package com.LazaruslieJmartKD;
 import com.LazaruslieJmartKD.dbjson.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
+
 /**
- * class Invoice
+ * abstract class Invoice
  *
  * @author (Lazaruslie Karsono)
  * 
  */
+
 public abstract class Invoice extends Serializable
 {
     public final Date date;
@@ -16,8 +17,6 @@ public abstract class Invoice extends Serializable
     public int productId;
     public int complaintId;
     public Rating rating;
-    public Status status;
-    public ArrayList<Record> history;
     
     public enum Rating{
         NONE, BAD, NEUTRAL, GOOD
@@ -41,16 +40,8 @@ public abstract class Invoice extends Serializable
         Calendar date = Calendar.getInstance();
         System.out.println(date.getTime());
         this.rating = Rating.NONE;
-        this.status = Status.WAITING_CONFIRMATION;
         this.complaintId = -1;
     }
-
-
-    public boolean read(String content){
-        return false;
-    }
     
-    public double getTotalPay(){
-        return 0.0;
-    }
+    public abstract double getTotalPay(Product product);
 }

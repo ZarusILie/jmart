@@ -2,7 +2,7 @@ package com.LazaruslieJmartKD;
 
 
 /**
- * Treasury
+ * class Treasury
  *
  * @author (Lazaruslie Karsono)
  * 
@@ -11,7 +11,7 @@ public class Treasury
 {
     public static final double COMMISSION_MULTIPLIER = 0.05;
     public static final double BOTTOM_PRICE = 20000.0;
-    public static final double BOTTOM_FEE = 1000.0;
+    public static final double BOTTOM_FEE = 0.0;
     public double price;
     public double discount;
     

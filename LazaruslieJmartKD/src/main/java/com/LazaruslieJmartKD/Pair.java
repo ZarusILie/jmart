@@ -1,5 +1,11 @@
 package com.LazaruslieJmartKD;
 
+/**
+ * class Pair
+ *
+ * @author (Lazaruslie Karsono)
+ */
+
 public class Pair<T,U> {
     public T first;
     public U second;

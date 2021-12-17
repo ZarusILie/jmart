@@ -21,32 +21,34 @@ public class Shipment
     public static final Plan REGULER = new Plan((byte)(1<<3));
     public static final Plan KARGO = new Plan((byte)(1<<4));
 
-    static class Plan {
+    static class Plan
+    {
         public final byte bit;
-
-        private Plan(byte bit) {
+        private Plan(byte bit)
+        {
             this.bit = bit;
         }
     }
+    //constructor
+    public Shipment(String address, int cost, byte plan, String receipt) {
+        this.address = address;
+        this.cost = cost;
+        this.plan = plan;
+        this.receipt = receipt;
+    }
 
-        
-        public String getEstimatedArrival(Date reference){
-            if((INSTANT.bit & plan) != 0 || (SAME_DAY.bit & plan) != 0){
-                return ESTIMATION_FORMAT.format(reference);
-            }
-            else if((SAME_DAY.bit & plan) != 0){
-                return ESTIMATION_FORMAT.format(reference);
-            }
-            else if((NEXT_DAY.bit & plan) != 0){
-                return ESTIMATION_FORMAT.format(reference.getDay()+1);
-            }
-            else if((REGULER.bit & plan) !=0){
-                return ESTIMATION_FORMAT.format(reference.getDay()+2);
-            }
-            else{
-                return ESTIMATION_FORMAT.format(reference.getDay()+5);
-            }
+    public String getEstimatedArrival(Date reference){
+        if((plan & INSTANT.bit) != 0 || (plan & SAME_DAY.bit) != 0){
+            return ESTIMATION_FORMAT.format(reference);
+        }else if((plan & NEXT_DAY.bit) != 0){
+            return ESTIMATION_FORMAT.format(reference.getDay() + 1);
+        }else if((plan & REGULER.bit) != 0){
+            return ESTIMATION_FORMAT.format(reference.getDay() + 2);
+        }else {
+            return ESTIMATION_FORMAT.format(reference.getDay() + 5); //KARGO
         }
+    }
+
     public boolean isDuration(Plan reference)
     {
         if((plan & reference.bit) != 0){
@@ -55,21 +57,15 @@ public class Shipment
             return false;
         }
     }
+
     public static boolean isDuration(byte object, Plan reference)
     {
         if((object & reference.bit) != 0){
             return true;
-        }else{
+        }
+        else{
             return false;
         }
-    }
-
-    
-    public Shipment(String address, int cost, byte plan, String receipt) {
-        this.address = address;
-        this.cost = cost;
-        this.plan = plan;
-        this.receipt = receipt;
     }
 
 }
